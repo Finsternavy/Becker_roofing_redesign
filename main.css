@@ -2,6 +2,7 @@
     --primary-color: rgb(2, 133, 241);
     --secondary-color: rgb(125, 125, 125);
     --accent-color: rgb(162, 162, 162);
+    --transparent-black: rgba(10, 10, 10, .5)
 }
 *{
     margin: 0;
@@ -16,19 +17,22 @@ a{
     text-decoration: none;
 }
 .home-nav{
-    display: flex;
+    position: fixed;
     top: 0;
     left: 0;
+    display: flex;
     flex-direction: column;
+    align-items: center;
     height: 200px;
     width: 100%;
-    position: fixed;
     z-index: 9999;
     
 }
 .nav-logo{
     background-color: white;
+    width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
     padding-block: 1rem;
 }
@@ -38,24 +42,22 @@ a{
 .menu{
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
     background-color: var(--primary-color);
     height: 3rem;
     width: 100%;
-    
     text-align: center;
+    border-bottom: 2px solid white;
 }
 .menu a{
-    display: block;
     position: relative;
     width: 100%;
-    text-align: center;
     color: white;
     font-size: 1.2rem;
-    transition: tranform .5s ease;
     transform-origin: top;
     z-index: 1;
+    
 }
 .menu a:after{
     content: "";
@@ -66,7 +68,7 @@ a{
     position: absolute;
     top: -6px;
     left: 5%;
-    transition: transform .3s ease;
+    transition: transform .5s ease;
     transform-origin: bottom;
     transform: scaleY(0);
     z-index: -1;
@@ -82,12 +84,14 @@ a{
 }
 .header{
     position: relative;
+    width: 100%;
     background-image: url("img/roof_from_roof_view.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-origin: bottom;
-    display: flex;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     z-index: 1;
     padding-block: 250px;
     margin-top: 120px;
@@ -101,6 +105,17 @@ a{
     top: 0;
     left: 0;
 }
+.header h1{
+    font-size: 7rem;
+    margin-top: -10rem;
+    color: var(--transparent-black);
+}
+.header h2{
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    font-weight: 900;
+    color: var(--transparent-black);
+}
 .lets-talk{
     position: relative;
     z-index: 2;
@@ -110,7 +125,7 @@ a{
     padding: 15px;
     border-radius: 16px;
     color: white;
-    font-size: 2rem;
+    font-size: 7rem;
     font-weight: 900;
 }
 .lets-talk:hover{
@@ -131,14 +146,14 @@ a{
     padding-left: 1rem;
     font-weight: 100;
     
-    padding-top: 140px;
+    padding-top: 160px;
     margin-bottom: 3rem;
     text-align: center;
 }
 .about-us-header::after{
     content: "";
     position: absolute;
-    top: 180px;
+    top: 200px;
     left: 5%;
     height: 1px;
     width: 90%;
@@ -271,6 +286,7 @@ a{
     align-items: center;
     width: 100%;
     padding-bottom: 3rem;
+    padding-bottom: 160px;
 }
 .services-img-card{
     position: relative;
@@ -313,30 +329,211 @@ a{
     background-color: white;
 }
 
+/*Contact Us*/
+
+.contact{
+    background-color: var(--accent-color);
+    align-items: center;
+}
+.contact-header{
+    position: relative;
+    width: 100%;
+    padding-top: 5rem;
+    padding-left: 1rem;
+    font-weight: 100;
+    color: rgb(50, 50, 50);
+    padding-top: 160px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.contact-header::after{
+    content: "";
+    position: absolute;
+    top: 200px;
+    left: 3%;
+    height: 1px;
+    width: 90%;
+    background-color: rgb(50, 50, 50);
+}
+.team{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 80px;
+}
+.team-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+}
+.tc-two{
+    flex-direction: row-reverse;
+}
+.team-card div{
+    width: 100%;
+    padding-inline: 2rem;
+}
+.team-img-container{
+    width: 250px;
+    width: 250px;
+    overflow: hidden;
+    clip-path: circle(36.8% at 50% 50%);
+}
+.team-img-container img{
+    width: 100%;
+}
+.name{
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.company-info{
+    text-align: center;
+    padding-bottom: 80px;
+}
+.address{
+    padding-bottom: 1rem;
+}
+.bold{
+    font-weight: 900;
+}
+.phone{
+    font-size: 2.75rem;
+    font-weight: 900;
+}
+
 /*footer*/
 
 .footer{
     position: relative;
     text-align: center;
     background-color: var(--primary-color);
-    height: 100px;
+    height: 200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.facebook{
-    padding-top: 5px;
-    color: rgb(50, 50, 50);
-    transform: scale(2.5);
+.footer i{
+    transform: scale(2);
+    padding-block: .5rem;
+    padding-right: 1rem;
+    color: black;
 }
-.fa-copyright, .footer a{
-    padding-top: .75rem;
-    padding-right: 10px;
-    position: relative;
-    color: rgb(50, 50, 50);
+.footer a.facebook{
+    padding-bottom: 3rem;
 }
-.fa-copyright{
-    text-shadow: 0 0 3px rgb(50, 50, 50);
-    color: var(--primary-color);
+i.fa-facebook{
+    color: white;
+    transform: scale(4);
+    padding: 0;
+    padding-top: .5rem;
+}
+i.fa-facebook:hover{
+    color: var(--secondary-color);
+}
+.creator-credit{
+    color: black;
+}
+i.fa-linkedin:hover{
+    color: var(--secondary-color);
+}
+.fa-linkedin{
+    padding-left: 1rem;
+}
+@media (min-width: 678px) {
+    .menu a{
+        position: relative;
+        width: 15%;
+        color: white;
+        font-size: 1.2rem;
+        transform-origin: top;
+        z-index: 1;
+
+
+    }
+    .menu a:after{
+        content: "";
+        width: 90%;
+        height: 2.75rem;
+        background-color: white;
+        border: 2px solid white;
+        position: absolute;
+        top: -15px;
+        transition: transform .5s ease;
+        transform-origin: top;
+        transform: scaleY(0);
+        z-index: -1;
+        
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 99%);
+    }
+    .menu a:hover::after{
+        transform: scaleX(1);
+    }
+    .menu a:hover{
+        color:var(--secondary-color);
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .header{
+        padding-top: 400px;
+        padding-bottom: 400px;
+    }
+    .lets-talk{
+        width: 100%;
+    }
+    .card{
+        flex-direction: row;
+        gap: 2rem;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card-container{
+        margin: 0;
+    }
+    .about-us-header{
+        padding-top: 180px;
+    }
+    .about-us-header::after{
+        top: 220px;
+    }
+    .services-img-container{
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        gap: 2rem;
+        width: 80%;
+    }
+    .services-header{
+        padding-top: 220px;
+    }
+    .services-header::after{
+        top: 260px;
+    }
+    .contact-header{
+        padding-top: 220px;
+    }
+    .contact-header::after{
+        top: 260px;
+        width: 90%;
+        left: 5%;
+        text-align: center;
+    }
+    .services-img-container{
+        width: 70%;
+    }
+    .team-card{
+        width: 40%;
+    }
+    .name{
+        font-size: 4rem;
+    }
 }
